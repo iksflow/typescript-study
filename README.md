@@ -104,3 +104,24 @@ Created a new tsconfig.json with:
   skipLibCheck: true
   forceConsistentCasingInFileNames: true
 ```
+
+## 4. Typescript 컴파일 ouput 경로 변경
+
+`tsc` 명령어로 컴파일 하면 `ts`파일과 같은 경로에 `js`파일을 만든다.  
+이렇게 되면 컴파일 결과물인 js파일까지 필요없이 git에 추가될 수 있기 때문에 소스 파일 관리가 복잡해진다.  
+`tsconfig.json`에 설정값을 추가해서 `ts`와 `js`를 나누어 저장하면 이 문제를 해결할 수 있다.
+다음 코드를 추가해 output과 source root경로를 수정한다.  
+일반적으로 `ts`파일을 `src` 하위에 보관하므로 `rootDir="./src"`를 추가하고, 컴파일 결과인 `js`파일들은 `dist` 하위에 보관하므로 `outDir="./dist"`를 추가한다.
+
+- rootDir: 컴파일 할 대상(.ts파일)이 있는 경로
+- outDir: 컴파일을 완료해서 생성된 결과물을 저장할 경로
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "rootDir": "./src",
+    "outDir": "./dist"
+  }
+}
+```

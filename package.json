@@ -1,0 +1,11 @@
+{
+  "name": "typescript-study",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com-iksflow:iksflow/typescript-study.git",
+  "author": "iksflow <theiksflow@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  }
+}
