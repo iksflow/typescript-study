@@ -1,6 +1,6 @@
 # Learning Typescript!
 
-## 1. Install
+## 1. Typescript 설치
 
 ### 1.1. node 설치 확인
 
@@ -84,4 +84,23 @@ document.body.textContent = greeter(user);
 $ tsc greeter.ts
 $ ls
 greeter.js greeter.ts
+```
+
+## 3. Typescript 환경 설정 파일 생성
+
+`tsconfig.json`을 활용하면 세부적인 컴파일 옵션을 설정할 수 있다.  
+`tsc` 명령어는 인자를 전달하지 않으면 `tsconfig.json`을 찾아서 정의된 내용을 따라 해당하는 ts파일을 컴파일한다.  
+`tsc --init` 으로 `tsconfig.json` 파일을 생성할 수 있다.
+
+```sh
+$ tsc --init
+
+Created a new tsconfig.json with:
+  TS
+  target: es2016
+  module: commonjs
+  strict: true
+  esModuleInterop: true
+  skipLibCheck: true
+  forceConsistentCasingInFileNames: true
 ```
